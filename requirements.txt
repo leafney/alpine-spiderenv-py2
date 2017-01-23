@@ -1,0 +1,10 @@
+requests
+selenium
+beautifulsoup4
+apscheduler
+pyvirtualdisplay
+supervisor
+glances
+docker-py
+pystache
+bottle
