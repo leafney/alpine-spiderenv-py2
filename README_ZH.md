@@ -111,6 +111,7 @@ $ docker restart spiderenv
 * requests
 * selenium + firefox + chrome
 * beautifulsoup4
+* xmltodict
 * lxml
 * Scrapy
 * apscheduler

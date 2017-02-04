@@ -12,6 +12,7 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.5/main" > /etc/apk/repositories 
 # 安装显示框架 pyvirtualdisplay 和 xvfb 用于无GUI情况下显示网页
 # 安装 lxml 和 beautifulsoup4 网页解析库
 # 安装 requests 请求库
+# 安装 xmltodict 工具库
 # 安装 Scrapy 爬虫库(about 200MB)
 # 安装 selenium 自动化测试工具
 # 安装 apscheduler 用于启用定时任务

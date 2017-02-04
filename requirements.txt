@@ -1,6 +1,7 @@
 requests
 selenium
 beautifulsoup4
+xmltodict
 apscheduler
 pyvirtualdisplay
 supervisor
