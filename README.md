@@ -23,6 +23,12 @@ The environment in Docker for spider to get static or dynamic web pages html and
 
 #### How to use
 
+##### Get image from DockerHub
+
+```
+$ docker pull leafney/alpine-spiderenv-py2
+```
+
 ##### Build image
 
 ```
@@ -81,7 +87,7 @@ The `hello.conf` configuration file under `config` directory:
 [program:spider_hello]   		            ; program name
 command=python hello.py     				; the program (relative uses PATH, can take args)
 directory=/app/spider/hello 	            ; directory to cwd to before exec (def no cwd)
-user=spider  								; setuid to this UNIX account to run the program
+user=root   								; setuid to this UNIX account to run the program
 autostart=true                           	; start at supervisord start (default: true)
 autorestart=true                         	; whether/when to restart (default: unexpected.May be one of false, unexpected, or true)
 startsecs=10  								; number of secs prog must stay running (def. 1)
@@ -91,6 +97,8 @@ stderr_logfile=/app/logs/hello_err.log       ; stderr log path, NONE for none; d
 ```
 
 The directory path of the configuration file in `*.conf` is the absolute path set for the program directory `/app` in the container. It is recommended to use an absolute path such as `directory=/app/spider/hello`. You can also use relative paths such as `directory=spider/hello`.
+
+In addition, in order to prevent the problem caused by the permission denied of the program executing, the default implementation of the user is set to `root`.
 
 ***
 

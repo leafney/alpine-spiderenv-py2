@@ -23,6 +23,12 @@ Docker下获取并解析静态或动态网页源码的爬虫环境。
 
 #### 如何使用
 
+##### 从 DockerHub 获取镜像
+
+```
+$ docker pull leafney/alpine-spiderenv-py2
+```
+
 ##### 构建镜像
 
 ```
@@ -81,7 +87,7 @@ spiderfile/
 [program:spider_hello]   		            ;服务的名称
 command=python hello.py     				; supervisor启动命令
 directory=/app/spider/hello 	            ; 项目的文件夹路径
-user=spider  								; 进程执行的用户身份
+user=root   								; 进程执行的用户身份
 autostart=true                           	; 是否自动启动
 autorestart=true                         	; 是否自动重启
 startsecs=10  								; 自动重启间隔
@@ -91,6 +97,8 @@ stderr_logfile=/app/logs/hello_err.log       ; 错误日志
 ```
 
 `*.conf` 中的配置文件的目录路径都是针对于容器中的程序目录 `/app` 来设置的绝对路径，推荐使用绝对路径如 `directory=/app/spider/hello` 来设置。也可以使用相对路径如 `directory=spider/hello` 。
+
+另外，为防止因权限问题导致爬虫程序执行时出错，默认执行用户设置为 `root` 。
 
 ***
 

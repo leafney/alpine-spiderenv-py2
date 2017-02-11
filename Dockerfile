@@ -23,10 +23,8 @@ RUN apk update && \
 	apk add python python-dev py2-pip py-lxml curl unzip sqlite && \
 	apk add xvfb py2-psutil && \
 	apk add gcc musl-dev libgcc openssl-dev libxml2-dev libxslt-dev libffi-dev libxml2 libxslt && \
-	adduser -D spider && \
 	mkdir -p /etc/supervisor/conf.d && \
-	mkdir -p /app && \
-	chown -R spider:spider /app
+	mkdir -p /app
 
 # install firefox and chrome
 RUN	apk add dbus-x11 ttf-freefont firefox-esr && \
